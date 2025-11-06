@@ -1,0 +1,138 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { BookOpen, Video, FileText, ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+
+const Resources = () => {
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = () => {
+    if (email && email.includes("@")) {
+      toast({
+        title: "Successfully subscribed!",
+        description: "You'll receive updates about new resources.",
+      });
+      setEmail("");
+    } else {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const resources = [
+    {
+      icon: BookOpen,
+      title: "Learning Materials",
+      description: "Curated tutorials and guides for beginners",
+      items: [
+        "Introduction to Programming",
+        "Web Development Basics",
+        "Mobile App Development",
+        "Data Science Fundamentals",
+      ],
+    },
+    {
+      icon: Video,
+      title: "Video Tutorials",
+      description: "Step-by-step video courses",
+      items: [
+        "Python for Beginners",
+        "HTML & CSS Masterclass",
+        "JavaScript Essentials",
+        "React Development",
+      ],
+    },
+    {
+      icon: FileText,
+      title: "Career Guides",
+      description: "Resources for your tech career",
+      items: [
+        "Resume Building Tips",
+        "Interview Preparation",
+        "Networking Strategies",
+        "Salary Negotiation",
+      ],
+    },
+  ];
+
+  return (
+    <section id="resources" className="py-20 bg-accent/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Learning <span className="text-primary">Resources</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Access our curated collection of learning materials, tutorials, and
+            career guidance to support your tech journey.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+          {resources.map((resource, index) => (
+            <Card
+              key={index}
+              className="border-none shadow-soft hover:shadow-glow transition-all duration-300"
+            >
+              <CardContent className="pt-6">
+                <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-hero">
+                  <resource.icon className="w-7 h-7 text-primary-foreground" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">{resource.title}</h3>
+                <p className="text-muted-foreground mb-4">
+                  {resource.description}
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {resource.items.map((item, itemIndex) => (
+                    <li
+                      key={itemIndex}
+                      className="flex items-center gap-2 text-sm"
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button variant="outline" className="w-full group" onClick={() => toast({ title: `Opening ${resource.title}...` })}>
+                  View Resources
+                  <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="border-none shadow-soft bg-gradient-hero max-w-4xl mx-auto">
+          <CardContent className="p-8 text-center">
+            <h3 className="text-3xl font-bold mb-3 text-primary-foreground">
+              Need More Resources?
+            </h3>
+            <p className="text-primary-foreground/90 mb-6 text-lg">
+              Our resource library is constantly growing. Sign up to get notified
+              when new materials are added.
+            </p>
+            <div className="flex gap-3 max-w-md mx-auto mb-4">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 px-4 py-2 rounded-md text-foreground"
+              />
+              <Button size="lg" variant="secondary" onClick={handleSubscribe}>
+                Subscribe
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  );
+};
+
+export default Resources;
