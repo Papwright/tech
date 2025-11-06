@@ -97,21 +97,21 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-12 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
             Get in <span className="text-primary">Touch</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             Have questions or want to learn more? We'd love to hear from you.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-12 max-w-6xl mx-auto">
           <Card className="border-none shadow-soft">
-            <CardContent className="pt-6">
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <CardContent className="pt-4 md:pt-6 px-4 md:px-6">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="block text-sm font-medium">
                     Your Name *
@@ -125,10 +125,10 @@ const Contact = () => {
                       setErrors({ ...errors, name: "" });
                     }}
                     required
-                    className={errors.name ? "border-red-500" : ""}
+                    className={`text-sm md:text-base ${errors.name ? "border-red-500" : ""}`}
                   />
                   {errors.name && (
-                    <p className="text-sm text-red-500">{errors.name}</p>
+                    <p className="text-xs md:text-sm text-red-500">{errors.name}</p>
                   )}
                 </div>
                 <div className="space-y-2">
@@ -145,10 +145,10 @@ const Contact = () => {
                       setErrors({ ...errors, email: "" });
                     }}
                     required
-                    className={errors.email ? "border-red-500" : ""}
+                    className={`text-sm md:text-base ${errors.email ? "border-red-500" : ""}`}
                   />
                   {errors.email && (
-                    <p className="text-sm text-red-500">{errors.email}</p>
+                    <p className="text-xs md:text-sm text-red-500">{errors.email}</p>
                   )}
                 </div>
                 <div className="space-y-2">
@@ -165,37 +165,37 @@ const Contact = () => {
                       setErrors({ ...errors, message: "" });
                     }}
                     required
-                    className={errors.message ? "border-red-500" : ""}
+                    className={`text-sm md:text-base ${errors.message ? "border-red-500" : ""}`}
                   />
                   {errors.message && (
-                    <p className="text-sm text-red-500">{errors.message}</p>
+                    <p className="text-xs md:text-sm text-red-500">{errors.message}</p>
                   )}
                 </div>
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full text-sm md:text-base">
                   Send Message
                 </Button>
               </form>
             </CardContent>
           </Card>
 
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <Card className="border-none shadow-soft">
-              <CardContent className="pt-6 space-y-6">
-                <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+              <CardContent className="pt-4 md:pt-6 px-4 md:px-6 space-y-4 md:space-y-6">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Contact Information</h3>
                 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-hero flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-primary-foreground" />
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-hero flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 md:w-6 md:h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="text-muted-foreground">techpearlmw1@gmail.com</p>
+                    <h4 className="font-semibold mb-1 text-sm md:text-base">Email</h4>
+                    <p className="text-muted-foreground text-sm md:text-base break-all">techpearlmw1@gmail.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-hero flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-primary-foreground" />
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-hero flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 md:w-6 md:h-6 text-primary-foreground" />
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Phone</h4>

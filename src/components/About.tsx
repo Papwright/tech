@@ -57,31 +57,31 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-accent/30">
+    <section id="about" className="py-12 md:py-20 bg-accent/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
             About <span className="text-primary">TechPearl MW</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             We're on a mission to transform the tech landscape in Malawi by
             empowering women and girls with the skills, confidence, and
             connections they need to thrive.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-12 md:mb-20">
           {values.map((value, index) => (
             <Card
               key={index}
               className="border-none shadow-soft hover:shadow-glow transition-all duration-300 bg-card"
             >
-              <CardContent className="pt-6">
-                <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-hero">
-                  <value.icon className="w-8 h-8 text-primary-foreground" />
+              <CardContent className="pt-4 md:pt-6 px-4 md:px-6">
+                <div className="mb-3 md:mb-4 inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-hero">
+                  <value.icon className="w-6 h-6 md:w-8 md:h-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{value.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{value.title}</h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>
               </CardContent>
@@ -89,27 +89,27 @@ const About = () => {
           ))}
         </div>
 
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-              <Award className="w-8 h-8 text-primary" />
-              Our Team
+        <div className="mb-12 md:mb-20">
+          <div className="text-center mb-8 md:mb-12">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-3">
+              <Award className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+              <span>Our Team</span>
             </h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
               Meet the passionate individuals driving TechPearl MW's mission forward.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
             {team.map((member, index) => (
               <Card key={index} className="text-center">
-                <CardContent className="pt-6">
-                  <div className="mb-4 mx-auto w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center">
-                    <Users className="w-10 h-10 text-primary-foreground" />
+                <CardContent className="pt-4 md:pt-6 px-4">
+                  <div className="mb-3 md:mb-4 mx-auto w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-hero flex items-center justify-center">
+                    <Users className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground" />
                   </div>
-                  <h4 className="font-bold text-lg mb-1">{member.name}</h4>
-                  <p className="text-primary text-sm font-medium mb-3">{member.role}</p>
-                  <p className="text-sm text-muted-foreground">{member.bio}</p>
+                  <h4 className="font-bold text-base md:text-lg mb-1">{member.name}</h4>
+                  <p className="text-primary text-xs md:text-sm font-medium mb-2 md:mb-3">{member.role}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">{member.bio}</p>
                 </CardContent>
               </Card>
             ))}
@@ -117,22 +117,22 @@ const About = () => {
         </div>
 
         <div>
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-              <Handshake className="w-8 h-8 text-primary" />
-              Our Partners
+          <div className="text-center mb-8 md:mb-12">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-3">
+              <Handshake className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+              <span>Our Partners</span>
             </h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
               We collaborate with leading organizations to maximize our impact.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
             {partners.map((partner, index) => (
               <Card key={index} className="hover:shadow-soft transition-all duration-300">
-                <CardContent className="pt-6">
-                  <h4 className="font-bold text-lg mb-2">{partner.name}</h4>
-                  <Badge variant="secondary">{partner.type}</Badge>
+                <CardContent className="pt-4 md:pt-6 px-4">
+                  <h4 className="font-bold text-base md:text-lg mb-2">{partner.name}</h4>
+                  <Badge variant="secondary" className="text-xs">{partner.type}</Badge>
                 </CardContent>
               </Card>
             ))}

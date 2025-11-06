@@ -61,39 +61,39 @@ const Resources = () => {
   ];
 
   return (
-    <section id="resources" className="py-20 bg-accent/30">
+    <section id="resources" className="py-12 md:py-20 bg-accent/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
             Learning <span className="text-primary">Resources</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             Access our curated collection of learning materials, tutorials, and
             career guidance to support your tech journey.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 md:mb-12">
           {resources.map((resource, index) => (
             <Card
               key={index}
               className="border-none shadow-soft hover:shadow-glow transition-all duration-300"
             >
-              <CardContent className="pt-6">
-                <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-hero">
-                  <resource.icon className="w-7 h-7 text-primary-foreground" />
+              <CardContent className="pt-4 md:pt-6 px-4 md:px-6">
+                <div className="mb-3 md:mb-4 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-hero">
+                  <resource.icon className="w-6 h-6 md:w-7 md:h-7 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-bold mb-2">{resource.title}</h3>
-                <p className="text-muted-foreground mb-4">
+                <h3 className="text-xl md:text-2xl font-bold mb-2">{resource.title}</h3>
+                <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4">
                   {resource.description}
                 </p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-4 md:mb-6">
                   {resource.items.map((item, itemIndex) => (
                     <li
                       key={itemIndex}
-                      className="flex items-center gap-2 text-sm"
+                      className="flex items-center gap-2 text-xs md:text-sm"
                     >
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}

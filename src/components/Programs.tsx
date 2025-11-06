@@ -81,26 +81,26 @@ const Programs = () => {
   ];
 
   return (
-    <section id="programs" className="py-20">
+    <section id="programs" className="py-12 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
             Our <span className="text-primary">Programs</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             Discover our range of programs designed to support women at every
             stage of their tech journey.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
           {programs.map((program, index) => (
             <Card
               key={index}
               className="overflow-hidden border-none shadow-soft hover:shadow-glow transition-all duration-300 group"
             >
               {program.image && (
-                <div className="h-48 overflow-hidden">
+                <div className="h-40 md:h-48 overflow-hidden">
                   <img
                     src={program.image}
                     alt={program.title}
@@ -108,24 +108,24 @@ const Programs = () => {
                   />
                 </div>
               )}
-              <CardContent className="p-6">
-                <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-accent">
-                  <program.icon className="w-7 h-7 text-secondary-foreground" />
+              <CardContent className="p-4 md:p-6">
+                <div className="mb-3 md:mb-4 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-accent">
+                  <program.icon className="w-6 h-6 md:w-7 md:h-7 text-secondary-foreground" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{program.title}</h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
+                <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{program.title}</h3>
+                <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4 leading-relaxed">
                   {program.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-3 md:mb-4">
                   {program.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="secondary">
+                    <Badge key={tagIndex} variant="secondary" className="text-xs">
                       {tag}
                     </Badge>
                   ))}
                 </div>
                 <Button
                   onClick={() => handleRegister(program.title)}
-                  className="w-full"
+                  className="w-full text-sm md:text-base"
                   variant="outline"
                 >
                   Register Now
@@ -135,50 +135,50 @@ const Programs = () => {
           ))}
         </div>
 
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-              <Trophy className="w-8 h-8 text-primary" />
-              Upcoming Events & Hackathons
+        <div className="mt-12 md:mt-20">
+          <div className="text-center mb-8 md:mb-12">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-3">
+              <Trophy className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+              <span>Upcoming Events & Hackathons</span>
             </h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
               Join us at our upcoming events and hackathons. Network, learn, and compete!
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
             {upcomingEvents.map((event, index) => (
               <Card key={index} className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
-                <CardContent className="pt-6">
-                  <div className="mb-4">
-                    <Badge className="mb-2">
+                <CardContent className="pt-4 md:pt-6 px-4 md:px-6">
+                  <div className="mb-3 md:mb-4">
+                    <Badge className="mb-2 text-xs">
                       {event.title.includes("Hackathon") ? "Hackathon" : "Event"}
                     </Badge>
-                    <h4 className="font-bold text-xl mb-3">{event.title}</h4>
+                    <h4 className="font-bold text-lg md:text-xl mb-2 md:mb-3">{event.title}</h4>
                   </div>
                   
-                  <div className="space-y-2 mb-4 text-sm">
+                  <div className="space-y-2 mb-3 md:mb-4 text-xs md:text-sm">
                     <div className="flex items-center gap-2 text-muted-foreground">
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
                       <span>{event.date}</span>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
-                      <Users className="w-4 h-4" />
+                      <Users className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
                       <span>{event.participants}</span>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
-                      <Trophy className="w-4 h-4" />
+                      <Trophy className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
                       <span>{event.prize}</span>
                     </div>
                   </div>
 
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                  <p className="text-muted-foreground text-xs md:text-sm mb-3 md:mb-4 line-clamp-3">
                     {event.description}
                   </p>
 
                   <Button 
                     onClick={() => handleRegister(event.title)}
-                    className="w-full"
+                    className="w-full text-sm md:text-base"
                   >
                     Register for Event
                   </Button>
@@ -190,7 +190,7 @@ const Programs = () => {
       </div>
 
       <Dialog open={isRegistrationOpen} onOpenChange={setIsRegistrationOpen}>
-        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-[95vw] sm:max-w-2xl md:max-w-3xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="sr-only">Event Registration</DialogTitle>
           </DialogHeader>

@@ -83,62 +83,62 @@ const Blog = () => {
   ];
 
   return (
-    <section id="blog" className="py-20">
+    <section id="blog" className="py-12 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
             News & <span className="text-primary">Blog</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
             Stay updated with success stories, tech insights, and community news
             from TechPearl MW.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {(showAll ? posts : posts.slice(0, 4)).map((post) => (
             <Card
               key={post.id}
               className="overflow-hidden border-none shadow-soft hover:shadow-glow transition-all duration-300 group"
             >
-              <div className="h-56 overflow-hidden">
+              <div className="h-44 md:h-56 overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <CardContent className="p-6">
-                <div className="mb-3">
-                  <Badge variant="secondary">{post.category}</Badge>
+              <CardContent className="p-4 md:p-6">
+                <div className="mb-2 md:mb-3">
+                  <Badge variant="secondary" className="text-xs">{post.category}</Badge>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 line-clamp-2">
+                <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-2 md:mb-3 line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 line-clamp-2">
+                <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4 line-clamp-2">
                   {post.excerpt}
                 </p>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs md:text-sm text-muted-foreground mb-3 md:mb-4">
                   <div className="flex items-center gap-1">
-                    <User className="w-4 h-4" />
-                    <span>{post.author}</span>
+                    <User className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+                    <span className="truncate">{post.author}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Calendar className="w-4 h-4" />
+                    <Calendar className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
                     <span>{post.date}</span>
                   </div>
                 </div>
-                <Button variant="outline" className="group/btn" onClick={() => alert(`Reading: ${post.title}`)}>
+                <Button variant="outline" className="group/btn w-full sm:w-auto text-sm md:text-base" onClick={() => alert(`Reading: ${post.title}`)}>
                   Read More
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button size="lg" variant="outline" onClick={() => setShowAll(!showAll)}>
+        <div className="text-center mt-8 md:mt-12">
+          <Button size="lg" variant="outline" className="text-sm md:text-base" onClick={() => setShowAll(!showAll)}>
             {showAll ? "Show Less" : "View All Posts"}
           </Button>
         </div>
