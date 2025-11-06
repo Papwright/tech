@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 
 const Resources = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Navigation />
-      <main>
+      <main className="pt-16">
         <ResourcesSection />
       </main>
       <Footer />
