@@ -55,7 +55,7 @@ const Programs = () => {
 
   const upcomingEvents = [
     {
-      title: "TechPearl Annual Hackathon 2024",
+      title: "TechPearl Annual Hackathon 2025",
       date: "December 15-17, 2024",
       location: "mHub Innovation Centre, Lilongwe",
       participants: "60+ participants",
@@ -64,7 +64,7 @@ const Programs = () => {
     },
     {
       title: "Web Development Bootcamp",
-      date: "November 20-22, 2024",
+      date: "November 20-22, 2025",
       location: "Online & In-Person",
       participants: "40 spots available",
       prize: "Free",
